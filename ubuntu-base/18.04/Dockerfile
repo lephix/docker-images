@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="lephix@163.com"
-LABEL description="This is a Ubuntu:18:04 base image. We love Ubuntu right?"
+LABEL description="This is a Ubuntu:18:04 base image. We love Ubuntu, right? Lephix rocks."
 
 # set locales
 RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
@@ -14,5 +14,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 # add tools
-RUN apt-get update && apt-get install -y curl wget vim python3 \
+RUN apt-get update && apt-get install -y curl wget vim jq\
 	&& apt-get purge -y
